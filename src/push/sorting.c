@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/15 14:37:26 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/03/19 14:42:52 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-t_stack_node	*find_min_node(t_stack_node **a)
+t_stack_node	*find_min(t_stack_node **a)
 {
 	t_stack_node	*current_a;
 	t_stack_node	*min_node;
@@ -79,7 +79,7 @@ t_stack_node	*find_min_node(t_stack_node **a)
 	return (min_node);
 }
 
-void	find_target_node(t_stack_node **a, t_stack_node **b)
+void	find_target(t_stack_node **a, t_stack_node **b)
 {
 	int				target;
 	t_stack_node	*current_a;
@@ -87,7 +87,7 @@ void	find_target_node(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*min_node;
 
 	current_b = *b;
-	min_node = find_min_node(a);
+	min_node = find_min(a);
 	while(current_b)
 	{
 		target = INT_MAX;
@@ -116,8 +116,7 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	else
 	{
 		push_leave_three(a, b);
-	//	printstack(b, 'b');
-		//sort_three(a);
-		//find_target_node(a, b);
+		sort_three(a);
+		//find_target(a, b);
 	}
 }
