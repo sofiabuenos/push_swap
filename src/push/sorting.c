@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/20 15:58:34 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/03/23 17:48:33 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 	long	len;
 
 	len = stack_len(a);
-	printf("len: %ld\n", len);
+	// printf("len: %ld\n", len);
 	while (len > 3)
 	{
 		pb(a, b);
@@ -60,6 +60,8 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 
 void	sort_stack(t_stack_node **a, t_stack_node **b)
 {
+	t_stack_node *cheapest;
+
 	if(stack_len(a) == 2)
 		sa(a);
 	else if (stack_len(a) == 3)
@@ -68,6 +70,11 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	{
 		push_leave_three(a, b);
 		sort_three(a);
-		init_nodes(a, b);
+		while (*b)
+		{
+			//printstack(b, 'B');
+			cheapest = init_nodes(a, b);
+			move_cheapest(a, b, cheapest);
+		}
 	}
 }
