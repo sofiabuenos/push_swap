@@ -6,7 +6,7 @@
 /*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:49:09 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/13 18:31:10 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/03/20 16:50:30 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,13 @@ void	printstack(t_stack_node **stack, char c)
 {
 	t_stack_node *temp = *stack;
 
-	printf("STACK %c\n", c);
+	printf("\nSTACK %c\n", c);
 	while(temp != NULL)
 	{
-		printf("%ld\n", temp->nbr);
-	//	printf("target %ld\n", temp->target_node->nbr);
+		printf("%ld\n\n", temp->nbr);
+		// printf("nbr: %ld\n index: %d\n push_cost: %d \n above_median: %d\n cheapest: %d\n"
+        //  	"target: %p\n next: %p\n perv: %p\n\n\n", temp->nbr, temp->index, temp->push_cost,
+        //  	temp->above_median, temp->cheapest, temp->target_node, temp->next, temp->prev);
 		temp = temp->next;
 	}
 }

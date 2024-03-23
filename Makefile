@@ -18,6 +18,7 @@ COMMANDS_DIR_FILES =	$(SRC_DIR)/commands/push.c\
 PUSH_DIR_FILES =	$(SRC_DIR)/push/errors.c \
 					$(SRC_DIR)/push/stack_init.c \
 					$(SRC_DIR)/push/sorting.c\
+					$(SRC_DIR)/push/init_nodes.c\
 					$(SRC_DIR)/main.c \
 
 UTILS_FILES =		$(UTILS_DIR)/stack_utils.c \

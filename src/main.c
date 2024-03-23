@@ -13,11 +13,9 @@ int	main(int ac, char **av)
 		return (1);
 	check_errors(ac, av);
 	stack_init(&a, ac, av);
-	// printstack(&a, 'a');
-	// printstack(&b, 'b');
-	// pb(&b, &a);
-	// pb(&b, &a);
+	printstack(&a, 'A');
 	sort_stack(&a, &b);
-	printstack(&a, 'a');
+	printstack(&b, 'B');
+	printstack(&a, 'A');
 	return (0);
 }

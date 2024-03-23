@@ -33,7 +33,7 @@ t_stack_node	*new_node(long n);
 void	lstadd_back(t_stack_node **stack, t_stack_node *new);
 void	stack_init(t_stack_node **stack, int ac, char **av);
 // nodes initiation
-
+void	init_nodes(t_stack_node **a, t_stack_node **b);
 // stack utils
 long	ft_atol(char *s);
 t_stack_node *return_biggest(t_stack_node **stack);
@@ -54,5 +54,6 @@ void	ss(t_stack_node **a, t_stack_node **b);
 // algorithms
 void	sort_three(t_stack_node **a);
 void	sort_stack(t_stack_node **a, t_stack_node **b);
+long	stack_len(t_stack_node **stack);
 
 #endif

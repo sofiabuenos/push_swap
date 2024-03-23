@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/19 14:42:52 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:58:34 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,55 +58,6 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 	}
 }
 
-t_stack_node	*find_min(t_stack_node **a)
-{
-	t_stack_node	*current_a;
-	t_stack_node	*min_node;
-	int				min_value;
-
-	current_a = *a;
-	min_value = INT_MAX;
-	min_node = NULL;
-	while(current_a)
-	{
-		if (current_a->nbr < min_value)
-		{
-			min_value = current_a->nbr;
-			min_node = current_a;
-		}
-		current_a = current_a->next;
-	}
-	return (min_node);
-}
-
-void	find_target(t_stack_node **a, t_stack_node **b)
-{
-	int				target;
-	t_stack_node	*current_a;
-	t_stack_node	*current_b;
-	t_stack_node	*min_node;
-
-	current_b = *b;
-	min_node = find_min(a);
-	while(current_b)
-	{
-		target = INT_MAX;
-		current_a = *a;
-		while(current_a)
-		{
-			if (current_b->nbr < current_a->nbr && target > current_a->nbr)
-			{
-				target = current_a->nbr;
-				current_b->target_node = current_a;
-			}
-			current_a = current_a->next;
-		}
-		if (target == INT_MAX)
-			current_b->target_node = min_node;
-		current_b = current_b->next;
-	}
-}
-
 void	sort_stack(t_stack_node **a, t_stack_node **b)
 {
 	if(stack_len(a) == 2)
@@ -117,6 +68,6 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	{
 		push_leave_three(a, b);
 		sort_three(a);
-		//find_target(a, b);
+		init_nodes(a, b);
 	}
 }
