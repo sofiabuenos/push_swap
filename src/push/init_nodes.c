@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_nodes.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:36:54 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/23 18:22:37 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:50:33 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ void	set_push_cost(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
 	int	len_b;
-	int	cost_a;
-	int	cost_b;
 	t_stack_node *current;
 
 	len_a = stack_len(a);
@@ -112,17 +110,13 @@ void	set_push_cost(t_stack_node **a, t_stack_node **b)
 	current = *b;
 	while (current)
 	{
-		cost_b = current->index;
+		current->push_cost = current->index;
 		if (current->above_median == false)
-			cost_b = len_b - current->index;
-		cost_a = current->target_node->index;
-		if (current->target_node->above_median == false)
-			cost_a = len_a - current->target_node->index;
-		if (cost_a >= cost_b)
-			current->push_cost = cost_a;
+			current->push_cost = len_b - current->index;
+		if (current->target_node->above_median)
+			current->push_cost += current->target_node->index;
 		else
-			current->push_cost = cost_b;
-		current->target_node->push_cost = cost_a;
+			current->push_cost += len_a - (current->target_node->index);
 		current = current->next;
 	}
 }
