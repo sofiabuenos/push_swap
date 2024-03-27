@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:01:01 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/13 15:05:46 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/03/27 15:05:05 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /**
  * @brief checks if the argument passed is in a number format.
- * Verifica se o primeiro char não é um sinal ou um número. Depois checa se é um sinal mas o próximo não é.
+ * Verifica se o primeiro char não é um sinal ou um número. 
+ * Depois checa se é um sinal mas o próximo não é.
  * Continua a verificar, até ao ultimo elemento se é um char válido, isto é, um número.
  * @param str_n 
  * @return int 
@@ -41,8 +42,6 @@ int syntax_check(int ac, char **av)
 	}
 	return (0); // Nenhum erro de sintaxe encontrado
 }
-
-
 
 void	list_array(long *arr, int ac, char **av)
 {
@@ -101,14 +100,13 @@ int	already_sorted(long *arr, int ac)
 	}
 	return (1); // se já está ordenado n faço nada
 }
-
-int check_and_free(long *arr, int error, char *error_msg)
+int check_and_free(long *arr, int error)
 {
 	if (error)
 	{
 		free(arr); // Libera a memória alocada
-		printf("%s\n", error_msg); // ft_putstr_fd("Error\n", 2); TEM QUE SER ISSO!
-		exit (1); // Retorna 1 indicando que houve um erro // ACHO QUE TEM QUE SER EXIT (1);
+		ft_putstr_fd("Error\n", 2); // ft_putstr_fd("Error\n", 2); TEM QUE SER ISSO!
+		exit (1);
 	}
 	return (0); // Retorna 0 indicando que não houve erro
 }
@@ -119,14 +117,14 @@ int check_errors(int ac, char **av)
 	if (!arr)
 		return (1);
 	if (syntax_check(ac, av))
-		return check_and_free(arr, 1, "erro de sintaxe");
+		return check_and_free(arr, 1);
 	list_array(arr, ac, av);
 	if (limits_check(arr, ac))
-		return check_and_free(arr, 1, "fora dos limites");
+		return check_and_free(arr, 1);
 	if (nb_repeats(arr, ac))
-		return check_and_free(arr, 1, "num repetido");
+		return check_and_free(arr, 1);
 	if (already_sorted(arr, ac))
-		return check_and_free(arr, 1, "já está ordenado");
+		return check_and_free(arr, 1);
 	free(arr); // Libera a memória no final, caso não haja erros
 	return (0);
 }

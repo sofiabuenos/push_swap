@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/23 17:48:33 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/03/27 14:10:11 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,5 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 			move_cheapest(a, b, cheapest);
 		}
 	}
+	top_min(a);
 }

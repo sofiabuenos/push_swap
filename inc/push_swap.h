@@ -20,19 +20,19 @@ typedef struct			s_stack_node
 }	t_stack_node;
 
 // handle errors
+
 int		syntax_check(int ac, char **av);
 void	list_array(long *arr, int ac, char **av);
 int		limits_check(long *arr, int ac);
 int		check_errors(int ac, char **av);
-int		duplicate_check(t_stack_node *a, long n);
-void	free_stack(t_stack_node **stack);
-void	free_errors(t_stack_node **a);
+
 // stack initiation
 void	printstack(t_stack_node **stack, char c);
 t_stack_node	*new_node(long n);
 void	lstadd_back(t_stack_node **stack, t_stack_node *new);
 void	stack_init(t_stack_node **stack, int ac, char **av);
 // nodes initiation
+t_stack_node	*find_min(t_stack_node **a);
 t_stack_node	*init_nodes(t_stack_node **a, t_stack_node **b);
 // stack utils
 long	ft_atol(char *s);
@@ -56,6 +56,7 @@ void	sort_three(t_stack_node **a);
 void	sort_stack(t_stack_node **a, t_stack_node **b);
 long	stack_len(t_stack_node **stack);
 void	move_cheapest(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest);
+void	top_min(t_stack_node **a);
 
 
 #endif
