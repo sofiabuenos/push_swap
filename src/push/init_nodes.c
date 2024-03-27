@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_nodes.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:36:54 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/26 15:50:33 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/03/27 17:47:24 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack_node	*find_min(t_stack_node **a)
 	current_a = *a;
 	min_value = INT_MAX;
 	min_node = NULL;
-	while(current_a)
+	while (current_a)
 	{
 		if (current_a->nbr < min_value)
 		{
@@ -48,11 +48,11 @@ void	set_target(t_stack_node **a, t_stack_node **b)
 
 	current_b = *b;
 	min_node = find_min(a);
-	while(current_b)
+	while (current_b)
 	{
 		target = INT_MAX;
 		current_a = *a;
-		while(current_a)
+		while (current_a)
 		{
 			if (current_b->nbr < current_a->nbr && target > current_a->nbr)
 			{
@@ -66,6 +66,7 @@ void	set_target(t_stack_node **a, t_stack_node **b)
 		current_b = current_b->next;
 	}
 }
+
 /**
  * @brief initiates the index and the bolean value above_median. 
  * This needs to be recalculated everytime the progam moves a node.
@@ -74,20 +75,19 @@ void	set_target(t_stack_node **a, t_stack_node **b)
  */
 void	set_current_position(t_stack_node **stack)
 {
-	int	i;
-	int	median;
-	t_stack_node *current;
+	int				i;
+	int				median;
+	t_stack_node	*current;
 
 	i = 0;
-	// if (stack_len(stack) / 2 == 0)
+	if (stack_len(stack) / 2 == 0)
 		median = stack_len(stack) / 2;
-	// else
-	// 	median = (stack_len(stack) / 2) + 1;
-	//printf("\nmedian = %d", median);
+	else
+		median = (stack_len(stack) / 2) + 1;
 	current = *stack;
 	if (! current)
 		return ;
-	while(current)
+	while (current)
 	{
 		(current)->index = i;
 		if (i <= median)
@@ -101,9 +101,9 @@ void	set_current_position(t_stack_node **stack)
 
 void	set_push_cost(t_stack_node **a, t_stack_node **b)
 {
-	int	len_a;
-	int	len_b;
-	t_stack_node *current;
+	int				len_a;
+	int				len_b;
+	t_stack_node	*current;
 
 	len_a = stack_len(a);
 	len_b = stack_len(b);
@@ -123,9 +123,9 @@ void	set_push_cost(t_stack_node **a, t_stack_node **b)
 
 t_stack_node	*set_cheapest(t_stack_node **b)
 {
-	int	lower_cost;
-	t_stack_node *best_node;
-	t_stack_node *current;
+	int				lower_cost;
+	t_stack_node	*best_node;
+	t_stack_node	*current;
 
 	lower_cost = INT_MAX;
 	current = *b;

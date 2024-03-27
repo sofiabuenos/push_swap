@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:16:19 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/13 17:49:35 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/03/27 17:59:39 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,24 @@ t_stack_node *return_biggest(t_stack_node **stack)
 		current = current->next;
 	}
 	return (bigger);
+}
+/**
+ * @brief APENAS PARA CHECAR - PODE DELETAR DEPOIS
+ * 
+ * @param stack 
+ * @param c 
+ */
+void	printstack(t_stack_node **stack, char c)
+{
+	t_stack_node	*temp = *stack;
+
+	printf("\nSTACK %c\n", c);
+	while(temp != NULL)
+	{
+		printf("%ld\n\n", temp->nbr);
+		// printf("nbr: %ld\n index: %d\n push_cost: %d \n above_median: %d\n cheapest: %d\n"
+        //  	"target: %p\n next: %p\n perv: %p\n\n\n", temp->nbr, temp->index, temp->push_cost,
+        //  	temp->above_median, temp->cheapest, temp->target_node, temp->next, temp->prev);
+		temp = temp->next;
+	}
 }

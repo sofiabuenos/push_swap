@@ -55,7 +55,7 @@ void	ss(t_stack_node **a, t_stack_node **b);
 void	sort_three(t_stack_node **a);
 void	sort_stack(t_stack_node **a, t_stack_node **b);
 long	stack_len(t_stack_node **stack);
-void	move_cheapest(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest);
+void	mv_cheapest(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest);
 void	top_min(t_stack_node **a);
 
 

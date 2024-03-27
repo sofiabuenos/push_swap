@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/27 14:10:11 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:56:22 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,17 @@
 
 void	sort_three(t_stack_node **a)
 {
-	t_stack_node *biggest_n;
+	t_stack_node	*biggest_n;
 
 	biggest_n = return_biggest(a);
 	if (*a == biggest_n)
 		ra(a);
 	if ((*a)->next == biggest_n)
 		rra(a);
-	if((*a)->nbr > (*a)->next->nbr)
+	if ((*a)->nbr > (*a)->next->nbr)
 		sa(a);
 }
+
 /**
  * @brief conta quantos elementos tem a stack
  * PODE IR PARA UTILS
@@ -32,8 +33,8 @@ void	sort_three(t_stack_node **a)
  */
 long	stack_len(t_stack_node **stack)
 {
-	long	len;
-	t_stack_node *current;
+	long			len;
+	t_stack_node	*current;
 
 	len = 0;
 	current = *stack;
@@ -50,7 +51,6 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 	long	len;
 
 	len = stack_len(a);
-	// printf("len: %ld\n", len);
 	while (len > 3)
 	{
 		pb(a, b);
@@ -60,9 +60,9 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 
 void	sort_stack(t_stack_node **a, t_stack_node **b)
 {
-	t_stack_node *cheapest;
+	t_stack_node	*cheapest;
 
-	if(stack_len(a) == 2)
+	if (stack_len(a) == 2)
 		sa(a);
 	else if (stack_len(a) == 3)
 		sort_three(a);
@@ -72,9 +72,8 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 		sort_three(a);
 		while (*b)
 		{
-			//printstack(b, 'B');
 			cheapest = init_nodes(a, b);
-			move_cheapest(a, b, cheapest);
+			mv_cheapest(a, b, cheapest);
 		}
 	}
 	top_min(a);
