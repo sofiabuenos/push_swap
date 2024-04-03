@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:00:53 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/03/27 18:01:39 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:30:50 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ int	main(int ac, char **av)
 		return (1);
 	check_errors(ac, av);
 	stack_init(&a, ac, av);
-	sort_stack(&a, &b);
+	// int len = stack_len(&a);
+	// int i = 0;
+	// int *arr = organize_arr(&a, stack_len(&a));
+	// while (i < len)
+	// {
+	// 	printf("arr[%d] = %d\n", i, arr[i]);
+	// 	i++;
+	// }
+	printf("mediana é: %d", organize_arr(&a, stack_len(&a)));
+	//sort_stack(&a, &b);
 	return (0);
 }

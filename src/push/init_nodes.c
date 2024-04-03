@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:36:54 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/27 17:47:24 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:53:03 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	set_current_position(t_stack_node **stack)
 	t_stack_node	*current;
 
 	i = 0;
-	if (stack_len(stack) / 2 == 0)
+	if (stack_len(stack) <= 5 || stack_len(stack) / 2 == 0)
 		median = stack_len(stack) / 2;
 	else
 		median = (stack_len(stack) / 2) + 1;

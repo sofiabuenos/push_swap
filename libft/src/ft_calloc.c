@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 20:30:22 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/03/07 13:54:11 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/03 15:33:08 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * @brief alocates memory for a pointer and initiates it with 0.
  * 
- * @param nmemb - how many spaces is needed
+ * @param nmemb - how many spaces are needed
  * @param size - variable size (char, int, long...)
  * @return void* 
  */

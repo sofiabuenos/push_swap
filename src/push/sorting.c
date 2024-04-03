@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/27 17:56:22 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:43:30 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,22 @@ long	stack_len(t_stack_node **stack)
 
 void	push_leave_three(t_stack_node **a, t_stack_node **b)
 {
-	long	len;
+	long			len;
+	int				median;
+	t_stack_node	*current;
 
 	len = stack_len(a);
-	while (len > 3)
+	median = organize_arr(a, len);
+	current = *a;
+	while (current && len > 3)
 	{
-		pb(a, b);
-		len --;
+		if (current->nbr < median)
+		{
+			pb(a, b);
+			len --;
+		}
+		....
+
 	}
 }
 

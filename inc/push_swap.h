@@ -31,14 +31,20 @@ void	printstack(t_stack_node **stack, char c);
 t_stack_node	*new_node(long n);
 void	lstadd_back(t_stack_node **stack, t_stack_node *new);
 void	stack_init(t_stack_node **stack, int ac, char **av);
+int	organize_arr(t_stack_node **a, int len);
+
 // nodes initiation
 t_stack_node	*find_min(t_stack_node **a);
 t_stack_node	*init_nodes(t_stack_node **a, t_stack_node **b);
+
 // stack utils
 long	ft_atol(char *s);
 t_stack_node *return_biggest(t_stack_node **stack);
+t_stack_node *return_smallest(t_stack_node **stack);
+
 // commands utils
 t_stack_node	*ft_findlast(t_stack_node **stack);
+
 // commands
 void	pa(t_stack_node **a, t_stack_node **b);
 void	pb(t_stack_node **b, t_stack_node **a);
@@ -51,6 +57,7 @@ void 	rrr(t_stack_node **a, t_stack_node **b);
 void	sa(t_stack_node **a);
 void	sb(t_stack_node **b);
 void	ss(t_stack_node **a, t_stack_node **b);
+
 // algorithms
 void	sort_three(t_stack_node **a);
 void	sort_stack(t_stack_node **a, t_stack_node **b);
