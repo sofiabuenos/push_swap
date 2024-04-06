@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/03 17:43:30 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:51:35 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,20 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*current;
 
 	len = stack_len(a);
-	median = organize_arr(a, len);
-	current = *a;
-	while (current && len > 3)
+	while (len > 3)
 	{
-		if (current->nbr < median)
+		median = get_median(a, len);
+		current = *a;
+		while (current && len > 3)
 		{
-			pb(a, b);
-			len --;
+			if (current->nbr < median)
+			{
+				pb(a, b);
+				len--;
+			}
+			current = current->next;
 		}
-		....
-
+		len = stack_len(a);
 	}
 }
 

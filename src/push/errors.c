@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:01:01 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/27 17:41:32 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:49:47 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,18 +41,6 @@ int	syntax_check(int ac, char **av)
 		i++;
 	}
 	return (0);
-}
-
-void	list_array(long *arr, int ac, char **av)
-{
-	int	i;
-
-	i = 0;
-	while (i < ac - 1)
-	{
-		arr[i] = ft_atol(av[i + 1]);
-		i++;
-	}
 }
 
 int	limits_check(long *arr, int ac)
@@ -103,17 +91,6 @@ int	already_sorted(long *arr, int ac)
 	return (1);
 }
 
-int	check_and_free(long *arr, int error)
-{
-	if (error)
-	{
-		free(arr);
-		ft_putstr_fd("Error\n", 2);
-		exit (1);
-	}
-	return (0);
-}
-
 int	check_errors(int ac, char **av)
 {
 	long	*arr;
@@ -129,7 +106,7 @@ int	check_errors(int ac, char **av)
 	if (nb_repeats(arr, ac))
 		return (check_and_free(arr, 1));
 	if (already_sorted(arr, ac))
-		return (check_and_free(arr, 1));
+		return (check_and_free(arr, 1)); // verificar se tenho que retornar 0 ou erro
 	free(arr);
 	return (0);
 }

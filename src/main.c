@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:00:53 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/03 17:30:50 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/05 15:56:03 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int	main(int ac, char **av)
 	stack_init(&a, ac, av);
 	// int len = stack_len(&a);
 	// int i = 0;
-	// int *arr = organize_arr(&a, stack_len(&a));
+	// int *arr = get_median(&a, stack_len(&a));
 	// while (i < len)
 	// {
 	// 	printf("arr[%d] = %d\n", i, arr[i]);
 	// 	i++;
 	// }
-	printf("mediana é: %d", organize_arr(&a, stack_len(&a)));
-	//sort_stack(&a, &b);
+	//printf("mediana é: %d", get_median(&a, stack_len(&a)));
+	sort_stack(&a, &b);
+	//printstack(&a, 'a');
 	return (0);
 }

@@ -3,41 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_nodes.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 16:36:54 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/01 15:53:03 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:03:07 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-
-/**
- * @brief POR NO UTILS
- * 
- * @param a 
- * @return t_stack_node* 
- */
-t_stack_node	*find_min(t_stack_node **a)
-{
-	t_stack_node	*current_a;
-	t_stack_node	*min_node;
-	int				min_value;
-
-	current_a = *a;
-	min_value = INT_MAX;
-	min_node = NULL;
-	while (current_a)
-	{
-		if (current_a->nbr < min_value)
-		{
-			min_value = current_a->nbr;
-			min_node = current_a;
-		}
-		current_a = current_a->next;
-	}
-	return (min_node);
-}
 
 void	set_target(t_stack_node **a, t_stack_node **b)
 {
