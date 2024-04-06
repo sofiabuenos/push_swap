@@ -51,7 +51,7 @@ void	pa(t_stack_node **a, t_stack_node **b)
 }
 
 /**
- * @brief takes the firs element on top of a and pushes to the top of b
+ * @brief takes the first element on top of a and pushes to the top of b
  * 
  * @param b 
  * @param a 

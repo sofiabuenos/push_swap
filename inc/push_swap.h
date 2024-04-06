@@ -26,6 +26,7 @@ int		check_errors(int ac, char **av);
 void			printstack(t_stack_node **stack, char c);
 t_stack_node	*new_node(long n);
 void			lstadd_back(t_stack_node **stack, t_stack_node *new);
+void			set_current_position(t_stack_node **stack);
 void			stack_init(t_stack_node **stack, int ac, char **av);
 int				get_median(t_stack_node **a, int len);
 
@@ -46,6 +47,7 @@ t_stack_node	*find_min(t_stack_node **a);
 
 t_stack_node	*return_biggest(t_stack_node **stack);
 t_stack_node	*return_smallest(t_stack_node **stack);
+void			cheapest_below_median(t_stack_node **a, int median);
 
 // commands utils
 t_stack_node	*ft_findlast(t_stack_node **stack);
@@ -69,6 +71,7 @@ void			sort_stack(t_stack_node **a, t_stack_node **b);
 long			stack_len(t_stack_node **stack);
 void			mv_cheapest(t_stack_node **a, t_stack_node **b, t_stack_node *cheapest);
 void			top_min(t_stack_node **a);
+void	push_leave_three(t_stack_node **a, t_stack_node **b);
 
 
 #endif
