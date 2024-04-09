@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:03:53 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/08 15:35:37 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/09 16:48:26 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,30 @@
 
 static void	swap(t_stack_node **stack)
 {
-	int temp;
-	
+	int	temp;
+
 	if ((*stack) == NULL || (*stack)->next == NULL)
 		return ;
 	temp = (*stack)->nbr;
 	(*stack)->nbr = (*stack)->next->nbr;
 	(*stack)->next->nbr = temp;
 }
+
 void	sa(t_stack_node **a)
 {
 	swap(a);
-	printf("sa\n");
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	sb(t_stack_node **b)
 {
 	swap(b);
-	printf("sb\n");
+	ft_putstr_fd("sb\n", 1);
 }
+
 void	ss(t_stack_node **a, t_stack_node **b)
 {
 	swap(a);
 	swap(b);
-	printf("ss\n");
+	ft_putstr_fd("ss\n", 1);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:49:09 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/08 15:41:28 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/09 17:17:39 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,28 @@ void	stack_init(t_stack_node **stack, int ac, char **av)
 	*stack = new_node(ft_atol(av[1]));
 	while (++i < ac)
 		lstadd_back(stack, new_node(ft_atol(av[i])));
+}
+
+void	del_pointer(void *ptr)
+{
+	if (ptr)
+	{
+		free(ptr);
+		ptr = NULL;
+	}
+}
+void	free_stack(t_stack_node **stack, void (*del)(void*))
+{
+	t_stack_node *current;
+	t_stack_node *temp;
+
+	current = *stack;
+	if (!*stack || !del)
+		return ;
+	while(current)
+	{
+		temp = current->next;
+		del_pointer(current);
+		current = temp;
+	}
 }

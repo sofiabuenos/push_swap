@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors_sinit_utils.c                                   :+:      :+:    :+:   */
+/*   errors_sinit_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/01 14:54:28 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/08 14:29:12 by sofiabueno       ###   ########.fr       */
+/*   Created: 2024/04/09 15:38:48 by sbueno-s          #+#    #+#             */
+/*   Updated: 2024/04/09 15:41:10 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ long	ft_atol(char *s)
 
 	result = 0;
 	sign = 1;
-	while (*s == ' ' || (*s <= 9 && *s <= 13))    // faz sentido fazer essa verificação?
+	while (*s == ' ' || (*s <= 9 && *s <= 13))
 		s++;
 	if (*s == '+' || *s == '-')
 	{
@@ -31,12 +31,6 @@ long	ft_atol(char *s)
 		result = result * 10 + (*s++ - '0');
 	return (result * sign);
 }
-// int	main(void)
-// {
-// 	char *s = "-2147483648";
-// 	printf("%ld", ft_atol(s));
-// 	return (0);
-// }
 
 void	list_array(long *arr, int ac, char **av)
 {
@@ -61,17 +55,21 @@ int	check_and_free(long *arr, int error)
 	return (0);
 }
 
-void bubble_sort(int arr[], int len)
+void	bubble_sort(int arr[], int len)
 {
-	int i = 0;
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
 	while (i < len - 1)
 	{
-		int j = 0;
+		j = 0;
 		while (j < len - i - 1)
 		{
 			if (arr[j] > arr[j + 1])
 			{
-				int temp = arr[j];
+				temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
 			}

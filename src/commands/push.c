@@ -1,14 +1,12 @@
-#include <stdio.h>
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:33:52 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/07 14:22:12 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/09 16:46:45 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +44,7 @@ static void	push(t_stack_node **dest, t_stack_node **src )
 void	pa(t_stack_node **a, t_stack_node **b)
 {
 	push(a, b);
-	printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 }
 
 /**
@@ -58,5 +56,5 @@ void	pa(t_stack_node **a, t_stack_node **b)
 void	pb(t_stack_node **a, t_stack_node **b)
 {
 	push(b, a);
-	printf("pb\n");
+	ft_putstr_fd("pb\n", 1);
 }

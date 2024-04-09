@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/08 15:28:06 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/09 15:29:57 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	sort_three(t_stack_node **a)
 	if ((*a)->nbr > (*a)->next->nbr)
 		sa(a);
 }
+
 void	sort_five(t_stack_node **a, t_stack_node **b)
 {
 	int				len_a;
@@ -37,10 +38,10 @@ void	sort_five(t_stack_node **a, t_stack_node **b)
 	}
 	sort_three(a);
 	while (*b)
-		{
-			cheapest = init_nodes(a, b);
-			mv_cheapest(a, b, cheapest);
-		}
+	{
+		cheapest = init_nodes(a, b);
+		mv_cheapest(a, b, cheapest);
+	}
 	top_min(a);
 }
 
@@ -57,7 +58,7 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 		push_left = len / 2;
 		median = get_median(a, len);
 		current = *a;
-		while (push_left > 0  && len > 3)
+		while (push_left > 0 && len > 3)
 		{
 			if (current->nbr < median)
 			{

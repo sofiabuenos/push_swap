@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
+/*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:16:19 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/08 16:04:49 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/09 15:57:43 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ t_stack_node	*find_min(t_stack_node **a)
 	}
 	return (min_node);
 }
+
 t_stack_node	*return_biggest(t_stack_node **stack)
 {
 	t_stack_node	*current;
@@ -85,7 +86,7 @@ t_stack_node	*return_biggest(t_stack_node **stack)
 	bigger = current;
 	while (current != NULL)
 	{
-		if(bigger->nbr < current->nbr)
+		if (bigger->nbr < current->nbr)
 			bigger = current;
 		current = current->next;
 	}
@@ -100,15 +101,17 @@ t_stack_node	*return_biggest(t_stack_node **stack)
  */
 void	printstack(t_stack_node **stack, char c)
 {
-	t_stack_node	*temp = *stack;
+	t_stack_node	*temp;
 
+	temp = *stack;
 	printf("\nSTACK %c\n", c);
-	while(temp != NULL)
+	while (temp != NULL)
 	{
 		printf("%ld\n\n", temp->nbr);
-		// printf("nbr: %ld\n index: %d\n push_cost: %d \n above_median: %d\n cheapest: %d\n"
-		//  	"target: %p\n next: %p\n perv: %p\n\n\n", temp->nbr, temp->index, temp->push_cost,
-		//  	temp->above_median, temp->cheapest, temp->target_node, temp->next, temp->prev);
+		printf("nbr: %ld\n index: %d\n push_cost: %d \n above_median: %d\n \
+			cheapest: %d\n" "target: %p\n next: %p\n perv: %p\n\n\n", \
+			temp->nbr, temp->index, temp->push_cost, temp->above_median, \
+			temp->cheapest, temp->target_node, temp->next, temp->prev);
 		temp = temp->next;
 	}
 }
