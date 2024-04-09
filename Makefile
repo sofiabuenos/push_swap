@@ -23,7 +23,8 @@ PUSH_DIR_FILES =	$(SRC_DIR)push/errors.c \
 					$(SRC_DIR)main.c \
 
 UTILS_FILES =		$(UTILS_DIR)/stack_utils.c \
-					$(UTILS_DIR)/commands_utils.c\
+					$(UTILS_DIR)/errors_sinit_utils.c\
+					$(UTILS_DIR)/sorting_utils.c\
 
 # concatenate all source files
 SRC = $(PUSH_DIR_FILES) $(UTILS_FILES) $(COMMANDS_DIR_FILES)

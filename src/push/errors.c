@@ -6,7 +6,7 @@
 /*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:01:01 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/05 16:49:47 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/08 16:06:53 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,11 @@ int	check_errors(int ac, char **av)
 		return (check_and_free(arr, 1));
 	if (nb_repeats(arr, ac))
 		return (check_and_free(arr, 1));
-	if (already_sorted(arr, ac))
-		return (check_and_free(arr, 1)); // verificar se tenho que retornar 0 ou erro
+	if (already_sorted(arr, ac))// é isso mesmo?
+	{
+		ft_putstr_fd("\n", 1);
+		exit(1);
+	}
 	free(arr);
 	return (0);
 }

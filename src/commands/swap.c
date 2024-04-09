@@ -6,7 +6,7 @@
 /*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:03:53 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/02/29 12:01:46 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/08 15:35:37 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,3 @@ void	ss(t_stack_node **a, t_stack_node **b)
 	swap(b);
 	printf("ss\n");
 }
-
-
-
-
-
-
-
-
-
-
-

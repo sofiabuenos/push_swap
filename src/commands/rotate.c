@@ -6,7 +6,7 @@
 /*   By: sofiabueno <sofiabueno@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:33:46 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/03/08 13:54:33 by sofiabueno       ###   ########.fr       */
+/*   Updated: 2024/04/08 15:35:15 by sofiabueno       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,10 @@ void	rb(t_stack_node **b)
 	printf("rb\n");
 }
 
-/**
- * @brief VERIFICAR SE PRECISO PROTEGER EM CASO DE NÃO TER NADA NA STACK B
- * 
- * @param a 
- * @param b 
- */
+
 void	rr(t_stack_node **a, t_stack_node **b)
 {
 	rotate(a);
 	rotate(b);
 	printf("rr\n");
 }
-
