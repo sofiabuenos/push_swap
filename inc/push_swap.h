@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:34:24 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/09 17:13:17 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:23:09 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,17 @@ void					cheapest_below_median(t_stack_node **a, int median);
 t_stack_node			*ft_findlast(t_stack_node **stack);
 
 // commands
-void					pa(t_stack_node **a, t_stack_node **b);
-void					pb(t_stack_node **b, t_stack_node **a);
-void					ra(t_stack_node **a);
-void					rb(t_stack_node **b);
-void					rr(t_stack_node **a, t_stack_node **b);
-void					rra(t_stack_node **a);
-void					rrb(t_stack_node **b);
-void					rrr(t_stack_node **a, t_stack_node **b);
-void					sa(t_stack_node **a);
-void					sb(t_stack_node **b);
-void					ss(t_stack_node **a, t_stack_node **b);
+void					pa(t_stack_node **a, t_stack_node **b, bool print);
+void					pb(t_stack_node **a, t_stack_node **b, bool print);
+void					ra(t_stack_node **a, bool print);
+void					rb(t_stack_node **b, bool print);
+void					rr(t_stack_node **a, t_stack_node **b, bool print);
+void					rra(t_stack_node **a, bool print);
+void					rrb(t_stack_node **b, bool print);
+void					rrr(t_stack_node **a, t_stack_node **b, bool print);
+void					sa(t_stack_node **a, bool print);
+void					sb(t_stack_node **b, bool print);
+void					ss(t_stack_node **a, t_stack_node **b, bool print);
 
 // algorithms
 void					sort_three(t_stack_node **a);

@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 15:29:57 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:27:31 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	sort_three(t_stack_node **a)
 
 	biggest_n = return_biggest(a);
 	if (*a == biggest_n)
-		ra(a);
+		ra(a, 1);
 	if ((*a)->next == biggest_n)
-		rra(a);
+		rra(a, 1);
 	if ((*a)->nbr > (*a)->next->nbr)
-		sa(a);
+		sa(a, 1);
 }
 
 void	sort_five(t_stack_node **a, t_stack_node **b)
@@ -33,7 +33,7 @@ void	sort_five(t_stack_node **a, t_stack_node **b)
 	len_a = stack_len(a);
 	while (len_a > 3)
 	{
-		pb(a, b);
+		pb(a, b, 1);
 		len_a--;
 	}
 	sort_three(a);
@@ -62,7 +62,7 @@ void	push_leave_three(t_stack_node **a, t_stack_node **b)
 		{
 			if (current->nbr < median)
 			{
-				pb(a, b);
+				pb(a, b, 1);
 				len--;
 				push_left--;
 			}
@@ -78,7 +78,7 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 	t_stack_node	*cheapest;
 
 	if (stack_len(a) == 2)
-		sa(a);
+		sa(a, 1);
 	else if (stack_len(a) == 3)
 		sort_three(a);
 	else if (stack_len(a) == 5)

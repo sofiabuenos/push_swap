@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 18:00:53 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/09 17:15:48 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:54:21 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	if (ac == 1 || (ac == 2 && !av[1][0]))
+	if (ac == 1)
 		return (1);
 	check_errors(ac, av);
 	stack_init(&a, ac, av);

@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:01:01 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 16:45:37 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 18:04:08 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	check_errors(int ac, char **av)
 		return (check_and_free(arr, 1));
 	if (nb_repeats(arr, ac))
 		return (check_and_free(arr, 1));
-	if (already_sorted(arr, ac))
+	if (already_sorted(arr, ac) && ac > 2)
 	{
 		free(arr);
 		exit(1);

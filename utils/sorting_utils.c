@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:57:32 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 15:42:08 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:27:53 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	move_a(t_stack_node **a, t_stack_node *cheapest)
 	while (*a != cheapest)
 	{
 		if (cheapest->above_median)
-			ra(a);
+			ra(a, 1);
 		else
-			rra(a);
+			rra(a, 1);
 	}
 }
 

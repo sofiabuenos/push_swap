@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 12:22:51 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 16:48:04 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:18:55 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,24 @@ void	rrotate(t_stack_node **stack)
 	*stack = ultimo;
 }
 
-void	rra(t_stack_node **a)
+void	rra(t_stack_node **a, bool print)
 {
 	rrotate(a);
-	ft_putstr_fd("rra\n", 1);
+	if (print)
+		ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(t_stack_node **b)
+void	rrb(t_stack_node **b, bool print)
 {
 	rrotate(b);
-	ft_putstr_fd("rrb\n", 1);
+	if (print)
+		ft_putstr_fd("rrb\n", 1);
 }
 
-void	rrr(t_stack_node **a, t_stack_node **b)
+void	rrr(t_stack_node **a, t_stack_node **b, bool print)
 {
 	rrotate(a);
 	rrotate(b);
-	ft_putstr_fd("rrr\n", 1);
+	if (print)
+		ft_putstr_fd("rrr\n", 1);
 }

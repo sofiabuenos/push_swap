@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:33:52 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 16:46:45 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/10 17:17:03 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,11 @@ static void	push(t_stack_node **dest, t_stack_node **src )
  * @param a destination
  * @param b origin
  */
-void	pa(t_stack_node **a, t_stack_node **b)
+void	pa(t_stack_node **a, t_stack_node **b, bool print)
 {
 	push(a, b);
-	ft_putstr_fd("pa\n", 1);
+	if (print)
+		ft_putstr_fd("pa\n", 1);
 }
 
 /**
@@ -53,8 +54,9 @@ void	pa(t_stack_node **a, t_stack_node **b)
  * @param a origin
  * @param b destination
  */
-void	pb(t_stack_node **a, t_stack_node **b)
+void	pb(t_stack_node **a, t_stack_node **b, bool print)
 {
 	push(b, a);
-	ft_putstr_fd("pb\n", 1);
+	if (print)
+		ft_putstr_fd("pb\n", 1);
 }
