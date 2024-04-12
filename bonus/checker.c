@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:45:44 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/12 15:01:32 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 17:07:40 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,15 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	check_errors(ac, av);
+	if (ac == 1)
+		return (0);
+	check_errors_checker(ac, av);
 	stack_init(&a, ac, av);
 	get_commands(&a, &b, 0);
 	if (!stack_organized(&a) && b == NULL)
-		ft_putstr_fd("OK", 1);
+		ft_putstr_fd("OK\n", 1);
 	else
-		ft_putstr_fd("KO", 1);
+		ft_putstr_fd("KO\n", 1);
 	free_stack(&a, del_pointer);
 	free_stack(&b, del_pointer);
 	return (0);

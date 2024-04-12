@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 18:16:19 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 15:57:43 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:22:36 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_stack_node	*find_min(t_stack_node **a)
 	return (min_node);
 }
 
-t_stack_node	*return_biggest(t_stack_node **stack)
+t_stack_node	*find_biggest(t_stack_node **stack)
 {
 	t_stack_node	*current;
 	t_stack_node	*bigger;

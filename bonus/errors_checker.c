@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   errors_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 18:00:53 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/12 20:07:14 by sbueno-s         ###   ########.fr       */
+/*   Created: 2024/02/12 10:01:01 by sofiabueno        #+#    #+#             */
+/*   Updated: 2024/04/12 17:17:50 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	main(int ac, char **av)
+int	check_errors_checker(int ac, char **av)
 {
-	t_stack_node	*a;
-	t_stack_node	*b;
+	long	*arr;
 
-	a = NULL;
-	b = NULL;
-	if (ac == 1)
+	arr = ft_calloc(ac - 1, sizeof(long));
+	if (!arr)
 		return (1);
-	if (ac >= 2)
-		return (check_errors(ac, av), 0);
-	stack_init(&a, ac, av);
-	sort_stack(&a, &b);
-	free_stack(&b, del_pointer);
-	free_stack(&a, del_pointer);
+	if (syntax_check(ac, av))
+		return (check_and_free(arr, 1));
+	list_array(arr, ac, av);
+	if (limits_check(arr, ac))
+		return (check_and_free(arr, 1));
+	if (nb_repeats(arr, ac))
+		return (check_and_free(arr, 1));
+	free(arr);
 	return (0);
 }

@@ -30,7 +30,7 @@ UTILS_FILES =		$(UTILS_DIR)/stack_utils.c \
 
 # Bonus files
 
-BONUS_FILES =	$(BONUS_DIR)/checker.c
+BONUS_FILES =	$(BONUS_DIR)/checker.c $(BONUS_DIR)/errors_checker.c
 
 # concatenate all push source files
 SRC = $(PUSH_DIR_FILES) $(UTILS_FILES) $(COMMANDS_DIR_FILES) $(SRC_DIR)main.c \

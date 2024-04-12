@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:38:48 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/09 15:41:10 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 20:19:30 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	check_and_free(long *arr, int error)
 	{
 		free(arr);
 		ft_putstr_fd("Error\n", 2);
-		exit (1);
+		exit(1);
 	}
 	return (0);
 }

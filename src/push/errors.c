@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:01:01 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/10 18:04:08 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 20:07:34 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int	check_errors(int ac, char **av)
 	if (already_sorted(arr, ac) && ac > 2)
 	{
 		free(arr);
-		exit(1);
+		exit(0);
 	}
 	free(arr);
 	return (0);

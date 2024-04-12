@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:34:24 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/10 17:23:09 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 17:13:32 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,11 @@ typedef struct s_stack_node
 
 // handle errors
 int						check_errors(int ac, char **av);
+int						syntax_check(int ac, char **av);
+int						limits_check(long *arr, int ac);
+int						nb_repeats(long *arr, int ac);
+int						already_sorted(long *arr, int ac);
+int						check_errors_checker(int ac, char **av);
 
 // stack initiation
 void					printstack(t_stack_node **stack, char c);
@@ -58,7 +63,7 @@ void					bubble_sort(int arr[], int len);
 int						get_median(t_stack_node **a, int len);
 //		init_nodes utils
 t_stack_node			*find_min(t_stack_node **a);
-t_stack_node			*return_biggest(t_stack_node **stack);
+t_stack_node			*find_biggest(t_stack_node **stack);
 void					cheapest_below_median(t_stack_node **a, int median);
 
 // commands utils

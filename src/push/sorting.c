@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 14:19:36 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/10 17:27:31 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:34:13 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sort_three(t_stack_node **a)
 {
 	t_stack_node	*biggest_n;
 
-	biggest_n = return_biggest(a);
+	biggest_n = find_biggest(a);
 	if (*a == biggest_n)
 		ra(a, 1);
 	if ((*a)->next == biggest_n)
@@ -25,7 +25,7 @@ void	sort_three(t_stack_node **a)
 		sa(a, 1);
 }
 
-void	sort_five(t_stack_node **a, t_stack_node **b)
+void	medium_sort(t_stack_node **a, t_stack_node **b)
 {
 	int				len_a;
 	t_stack_node	*cheapest;
@@ -42,7 +42,6 @@ void	sort_five(t_stack_node **a, t_stack_node **b)
 		cheapest = init_nodes(a, b);
 		mv_cheapest(a, b, cheapest);
 	}
-	top_min(a);
 }
 
 void	push_leave_three(t_stack_node **a, t_stack_node **b)
@@ -81,8 +80,8 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 		sa(a, 1);
 	else if (stack_len(a) == 3)
 		sort_three(a);
-	else if (stack_len(a) == 5)
-		sort_five(a, b);
+	else if (stack_len(a) <= 100)
+		medium_sort(a, b);
 	else
 	{
 		push_leave_three(a, b);
@@ -93,5 +92,6 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 			mv_cheapest(a, b, cheapest);
 		}
 	}
+	set_current_position(a);
 	top_min(a);
 }
