@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 17:45:44 by sbueno-s          #+#    #+#             */
-/*   Updated: 2024/04/10 18:03:48 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 15:01:32 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	stack_organized(t_stack_node **a)
 {
-	t_stack_node *current;
+	t_stack_node	*current;
 
 	current = *a;
 	while (current && current->next)
@@ -52,7 +52,7 @@ int	check_and_do(char *command, t_stack_node **a, t_stack_node **b, size_t i)
 		ss(a, b, 0);
 	else
 		return (1);
-	return(0);
+	return (0);
 }
 
 void	get_commands(t_stack_node **a, t_stack_node **b, int i)
@@ -82,15 +82,13 @@ void	get_commands(t_stack_node **a, t_stack_node **b, int i)
 	free(command);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack_node	*a;
 	t_stack_node	*b;
 
 	a = NULL;
 	b = NULL;
-	/* if (ac == 1)
-		return (1); */
 	check_errors(ac, av);
 	stack_init(&a, ac, av);
 	get_commands(&a, &b, 0);

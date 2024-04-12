@@ -6,7 +6,7 @@
 /*   By: sbueno-s <sbueno-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 14:49:09 by sofiabueno        #+#    #+#             */
-/*   Updated: 2024/04/09 17:17:39 by sbueno-s         ###   ########.fr       */
+/*   Updated: 2024/04/12 14:59:17 by sbueno-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,16 @@ void	del_pointer(void *ptr)
 		ptr = NULL;
 	}
 }
+
 void	free_stack(t_stack_node **stack, void (*del)(void*))
 {
-	t_stack_node *current;
-	t_stack_node *temp;
+	t_stack_node	*current;
+	t_stack_node	*temp;
 
 	current = *stack;
 	if (!*stack || !del)
 		return ;
-	while(current)
+	while (current)
 	{
 		temp = current->next;
 		del_pointer(current);
