@@ -76,6 +76,8 @@ void	sort_stack(t_stack_node **a, t_stack_node **b)
 {
 	t_stack_node	*cheapest;
 
+	if (stack_len(a) == 1)
+		return ;
 	if (stack_len(a) == 2)
 		sa(a, 1);
 	else if (stack_len(a) == 3)
