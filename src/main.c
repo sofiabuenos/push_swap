@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	if (ac == 1)
-		return (1);
+		return (check_errors(ac, av), 0);
 	check_errors(ac, av);
 	stack_init(&a, ac, av);
 	sort_stack(&a, &b);
